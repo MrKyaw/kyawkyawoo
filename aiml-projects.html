@@ -3,91 +3,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIML Projects</title>
     <style>
-        /* Same styling as main page */
-        #resumeFrame { /* ... */ }
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template:
+                "problem problem problem" auto
+                "tech image outcome" 1fr
+                "solution solution solution" auto
+                / 1fr min-content 1fr;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 200px;
+        }
+
+        .problem { 
+            grid-area: problem;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .tech-stack-section {
+            grid-area: tech;
+            align-self: start;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .image-container {
+            grid-area: image;
+            position: relative;
+            min-width: 150px;
+            width: 150px;
+            align-self: center;
+            justify-self: center;
+            transition: all 0.3s ease;
+        }
+
+        .dynamic-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .outcome-section {
+            grid-area: outcome;
+            align-self: start;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .solution-section {
+            grid-area: solution;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                grid-template:
+                    "problem" auto
+                    "tech" auto
+                    "image" auto
+                    "outcome" auto
+                    "solution" auto
+                    / 1fr;
+            }
+            
+            .image-container {
+                width: 100%;
+                height: 200px;
+                margin: 15px 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- <nav>
-        <a href="kyaw_resume.html" target="resumeFrame">Resume</a>
-        <a href="index.html#about">About</a>
-        <a href="aiml-projects.html">AIML Projects</a>
-        <a href="aiml-products.html">AIML Products</a>
-        <a href="it-projects.html">IT Projects</a>
-        <a href="it-products.html">IT Products</a>
-        <a href="index.html#contact">Contact</a>
-    </nav> -->
+    <h1>AIML Projects(Under Construction Page)</h1>
+    <div class="project-container">
+        <p>Project 1: Agentic Project Agnostic Management Advisor in 2025(On Going)</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Dynamic Resource Allocation: Traditional systems struggle to adjust resources in real-time</li>
+                    <li>Data Integration Issues: Challenges in merging diverse data sources (CSV, JSON, APIs)</li>
+                    <li>Lack of Context-Aware Task Estimation: No automated, real-time compliance and task estimation</li>
+                </ul>
+            </div>
 
-    <h1>AIML Projects(Under Construction)</h1>
-    <div class="project">
-        <div class="project-title">Project 1: Agentic Project Agnostic Management Advisor (APAMA-Ongoing)</div>
-        <img src="images/apama.jpg"  alt="APAMA"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>The Agentic Project Agnostic Management Advisor (APMA) integrates AI-driven virtual assistants, called CrewAgents, to streamline project management by automating workflows and analyzing diverse data formats, ensuring scalability and adaptability. Built on open-source technology, it offers a flexible, unified solution for planning, execution, and analysis, helping teams make predictive decisions and tackle evolving challenges.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
-    <!-- Repeat for other projects -->
- 
-    <div class="project">
-        <div class="project-title">Project 2: Mobility Guided Intelligent Information Assistant(MGIIA-Ongoing)</div>
-        <img src="images/mgiia.jpg"  alt="MGIIA"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>The Mobility Guided Intelligent Information Assistant (MGIIA) enhances autonomous vehicle safety by providing real-time, hands-free safety tips using AI-powered analysis and visual perception through vehicle cameras. By integrating GenAI and LLMs, it monitors road elements, assesses risks, and delivers timely warnings or safety suggestions via voice or visual cues, ensuring a seamless, distraction-free driving experience</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>crewAI Framework: Integrates autonomous agents and LLMs (Ollama LLM with llama3.2)</li>
+                    <li>Data Management: YAML for configuration, Pandas for data processing, custom JSON5 parsers</li>
+                    <li>API Integrations: Trello, ERP systems, and market trend webhooks for seamless data flow</li>
+                </ul>
+            </div>
 
-    <div class="project">
-        <div class="project-title">Project 3: Time-to-event Machine Learning models in Predicting Oral Cavity Cancer Prognosis</div>
-        <img src="images/tte_cancer.jpg"  alt="Cancer Prognosis"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>It aims to compare machine learning algorithms, including DeepSurv, DeepHit, Cox-Time, and RSF, for predicting oral cavity cancer prognosis with a focus on incorporating time-to-event data. The goal is to improve the prediction of dynamic survival outcomes, enabling more accurate treatment decisions.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
+            <div class="image-container">
+                <img src="images/apama.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href="https://github.com/MrKyaw/Agentic-Project-Agnostic-Management-Advisor" class="view-project">Work Sample Only</a>
+            </div>
 
-    <div class="project">
-        <div class="project-title">Project 4: AI Driven Resource Identification and Matching System</div>
-        <img src="images/aidrms.jpg"  alt="Resource Identificator"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>This project aims to automate the resource matching process, significantly reducing the time needed to deliver aid and improving the overall effectiveness of disaster response efforts.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
-    
-     <div class="project">
-        <div class="project-title">Project 5: Project Orion and CATA(Data Management Data Pipelines)</div>
-        <img src="images/orion_cata.jpg"  alt="Orion"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>Project Orion and CATA focus on creating a robust data governance system to streamline data ingestion from multiple sources, ensuring quality and scalability. By leveraging tools like Collibra and Apache Airflow, the project aims to automate and manage data pipelines effectively across various environments.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <p>Efficiency Gains</p>
+                <ul>
+                    <li>42% reduction in planning cycle time</li>
+                    <li>91% compliance in structured outputs using Pydantic models</li>
+                </ul>
+                <p>Operational Improvements</p>
+                <ul>
+                    <li>27% improvement in stock turnover, 15% reduction in excess inventory</li>
+                    <li>88% correlation between forecasted and actual sales, ±18% confidence in demand predictions</li>
+                </ul>
+            </div>
 
-     <div class="project">
-        <div class="project-title">Project 6: Enterprise HR and Finance Analytics</div>
-        <img src="images/ebfhr.jpg"  alt="Enterprise HR and Finance"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>How an analytics governance board integrates HR and finance data to enhance talent management and financial forecasting. By leveraging tools like Azure and Power BI, HR teams can uncover insights to boost recruitment and employee performance, streamlining data through platforms like Data Factory and Data Lake for effective analysis and decision-making.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>AI-Driven System: Uses autonomous agents powered by large language models (LLMs) for task management</li>
+                </ul>
+                <p>Four Key Domains</p>
+                 <ul>
+                    <li>Project Planning: Goal-oriented campaign development</li>
+                    <li>Inventory Management: Optimizing stock and supplier coordination</li>
+                    <li>Sales Forecasting: Predicting trends using market data</li>
+                    <li>Project Analysis: Post-mortem evaluation via Trello integration</li>
+                    <li>Agentic Workflows: Data Collection → Analysis → Reporting using specialized agents</li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="project">
-        <div class="project-title">Project 7: Volunteer Management System(VMS)</div>
-        <img src="images/vms.jpg"  alt="VMS"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>A volunteer Management System designed to streamline the recruitment and engagement of volunteers through a centralized database and online portal. By utilizing AWS cloud technologies, the system enhances communication and tracking, making it easier for organizations to manage volunteer activities across various sectors like healthcare and education.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
+        <p>Project 2: Mobility Guided Intelligent Information Assistant in 2025(On Going)</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Current mobility systems have gaps in real-time context and hands-free navigation</li>
+                    <li>Detection systems fail in extreme conditions</li>
+                    <li>AI hallucinations and slow, non-multimodal interfaces reduce trust and situational awareness</li>
+                </ul>
+            </div>
 
-    <div class="project">
-        <div class="project-title">Project 8: Finance Dashboard (Finance Analytics)</div>
-        <img src="images/fdb.jpg"  alt="Finance"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>The Finance Dashboard leverages finance analytics to track KPIs, manage cash, and analyze expenses, using tools like Tableau and Excel for real-time data insights. This approach streamlines reporting and enhances forecasting, allowing finance teams to focus on cost reduction and profitability.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>YOLOv8 for object detection</li>
+                    <li>LLAMA32 for hazard processing (15 frames/sec)</li>
+                    <li>RAG with vector databases for real-time traffic insights</li>
+                    <li>Edge AI for low-latency, high-efficiency performance</li>
+                </ul>
+            </div>
 
-    <div class="project">
-        <div class="project-title">Project 9: Project SPARK (People Analytics)</div>
-        <img src="images/spark.jpg"  alt="SPARK"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>Project SPARK focuses on enhancing talent management by analyzing HR data to improve workforce performance and decision-making. Using tools like Python, R, and Tableau, it streamlines recruitment, boosts employee satisfaction, and provides actionable insights for better HR practices.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
+            <div class="image-container">
+                <img src="images/mgiia.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href="https://github.com/MrKyaw/Mobility-Guided-Intelligent-Information-Assistant" class="view-project">Work Sample Only</a>
+            </div>
 
-    <!-- <iframe name="resumeFrame" id="resumeFrame" title="Resume"></iframe> -->
-    <footer><!-- Consistent footer --></footer>
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Achieved 94.7% detection accuracy with 68.4% CPU usage</li>
+                    <li>Reduced false positives by 40% and delivered 92.4% relevant alerts</li>
+                    <li>Proven scalable in vehicles, warehouses, and public transportation.</li>
+                    <li>4.3 seconds latency and enhanced real-time adaptability with Edge AI and RAG integration</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>MGIIA combines YOLOv8 (computer vision) and LLMs (natural language processing) for real-time, hands-free guidance</li>
+                    <li>Uses multi-source inputs (cameras, sensors, vector databases) to deliver alerts via voice, text, and video</li>
+                    <li>Modular, open-source design for scalability across various industries (transportation, warehousing, public spaces)</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 3: Time-to-Event Machine Learning models in Predicting Oral Cavity Cancer Prognosis in 2024(Research based)</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Difficulty in accurately predicting oral cavity cancer patient outcomes over time</li>
+                    <li>Traditional methods lack focus on "when" key health events occur</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Machine Learning Algorithms: DeepSurv, DeepHit, Cox-Time, Random Survival Forest (RSF)</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/tte_cancer.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Achieved better prediction accuracy for patient survival timelines</li>
+                    <li>Enabled more personalized and timely treatment planning for patients</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Compare different machine learning models that specifically handle time-to-event data</li>
+                    <li>Focus on improving dynamic survival outcome predictions to support better treatment decisions</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 4: AI Driven Resource Identification and Matching System in 2024</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Disaster resource matching is slow and inefficient, often taking weeks</li>
+                    <li>Delayed aid leads to lower effectiveness in disaster response efforts</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Neo4j: For building the knowledge graph database.</li>
+                    <li>dspy: To handle AI workflows and input/output fields</li>
+                    <li>Web Scraping: To gather up-to-date resource and organization datas</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/aidrms.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Developed a working prototype that reduces matching time from weeks to just a few hours</li>
+                    <li>Built an intuitive UI for organizations to submit needs and find resources quickly</li>
+                    <li>Successfully demonstrated automation of the resource matching process</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Build an AI-driven system to automate resource identification and matching</li>
+                    <li>Use a knowledge graph to map connections between disasters, resources, organizations, locations, and partners</li>
+                    <li>Create a simple web app for easy input and quick matching</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 5:  Project Orion and CATA(Data Management Data Pipelines) in 2022</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Difficulty in importing and managing real-time data from multiple sources</li>
+                    <li>Challenges with maintaining data quality, scalability, parallel processing, and uniform data structure</li>
+                    <li>Manual, unmanaged ingestion processes across different environments (UAT, QA, Production)</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Techniques: Data Mapping, Data Governance, ETL, Data Ingestion Lifecycle, CDC, SCD2, Workflow Automation, Batch Processing</li>
+                    <li>Tools: Collibra, Facebook Flux, Hadoop, Spark, Yarn, Git, Jenkins, AWS S3, Apache Airflow</li>
+                    <li>Languages: Python, PySpark, SQL</li>
+                    <li>Project Management: Confluence, Jira</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/orion_cata.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Built a scalable, automated ingestion and governance platform</li>
+                    <li>Enabled seamless data flow to Data Lakes and Data Warehouses</li>
+                    <li>Empowered downstream teams (Data Science, AI/ML, BI, Analytics) with high-quality, accessible data</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Designed automated data ingestion pipelines integrated with a data governance framework</li>
+                    <li>Implemented real-time and batch processing workflows</li>
+                    <li>Used ALC methodology to manage ingestion consistently across environments</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 6: Enterprise HR and Finance Analytics in 2021</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Lack of an analytics system to maintain HR momentum and improve talent management</li>
+                    <li>Difficulty in forecasting financial needs and tracking HR performance effectively</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Techniques: Data Management, Data Governance, Data Science (Modeling, Optimization, Testing), Business Intelligence</li>
+                    <li>Tools: Azure Data Lake Gen 2, Azure Data Factory, Power BI Service and Pro, Spyder</li>
+                    <li>Programming Languages: Python, DAX, Power M</li>
+                    <li>Project Management: Agile Scrum methodology</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/ebfhr.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>HR and Finance teams gained quick, actionable insights</li>
+                    <li>Improved talent acquisition, financial forecasting, and employee performance tracking</li>
+                    <li>Enabled smarter, faster business decisions across the organization</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Built an analytics governance platform combining HR and Finance data</li>
+                    <li>Created dashboards, reports, and analytics models to track, analyze, and gain insights</li>
+                    <li>Helped HR teams optimize recruitment, employee performance, and workplace management</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 7: Volunteer Management System(VMS) in 2020</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Difficulty tracking and managing volunteers</li>
+                    <li>Inefficient communication and low volunteer engagement</li>
+                    <li>Limited resources to maintain an active volunteer base</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Cloud Platform: AWS (EC2, S3, VPC, IAM, CloudWatch, CloudFormation, CloudTrail, CloudFront)</li>
+                    <li>Programming: Python, Bash Scripting</li>
+                    <li>Frontend: Angular (Volunteer Client App), JavaScript (Asset Exploration)</li>
+                    <li>Security: Hyperledger Fabric Blockchain</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/vms.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Centralized and efficient volunteer tracking and engagement</li>
+                    <li>Easier volunteer recruitment, management, and rewards</li>
+                    <li>Stronger data security and transparency</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Built a centralized Volunteer Management System (VMS)</li>
+                    <li>Features include: Volunteer Portal, Database Management, Task Matching, Tracking, and Recognition</li>
+                    <li>Designed for nonprofits, healthcare, education, event planning, and government use</li>
+                    <li>Used blockchain for data security and trust</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 8:  Finance Dashboard (Finance Analytics) in 2017</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Difficult to track key financial KPIs like expenses, sales, profits, and cash flow</li>
+                    <li>Time-consuming manual financial reporting and data preparation</li>
+                    <li>Challenges in timely and accurate financial decision-making</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Techniques: Data preparation, financial analysis</li>
+                    <li>Tools: Tableau Server, Tableau Desktop, Microsoft Excel</li>
+                    <li>Project Management: Trello, Agile Scrum, Microsoft Teams</li>
+                    <li>Programming: Basic scripting for data handling and Python</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/fdb.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Streamlined financial reporting with real-time insights</li>
+                    <li>Faster, smarter financial decision-making for top management</li>
+                    <li>Analysts focused more on cost-saving strategies rather than manual tasks</li>
+                    <li>Set foundation for future AI-driven financial forecasting and risk alerts</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Developed a unified finance dashboard combining multiple data sources</li>
+                    <li>Enabled real-time analysis, forecasting, budgeting, and reporting</li>
+                    <li>Reduced reliance on manual spreadsheets and improved decision speed</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 9: Project SPARK (People Analytics) in 2017</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Without deep insights into talent profiles both internally and externally, companies struggle to hire, retain, and engage top talent effectively</li>
+                    <li>HR teams face challenges like lack of data analysis skills, dealing with multiple disconnected data sources, and concerns about privacy and compliance</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Techniques: Data preparation, feature engineering, EDA (Exploratory Data Analysis), classification models (Logistic, SVM, Random Forest, Neural Networks), regression, clustering (KMeans, Hierarchical), propensity score analysis</li>
+                    <li>Tools: Jupyter Notebook, Spyder, RStudio, Tableau, Excel</li>
+                    <li>Languages: Python, R</li>
+                    <li>Trello, Agile Scrum framework, MS Teams</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/spark.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Enabled smarter and quicker HR decisions through visually rich dashboards</li>
+                    <li>Improved the employee experience, hiring efficiency, and overall talent management strategy</li>
+                    <li>Enhanced executive insights for proactive management action</li>
+                    <li>Visualizations displayed key metrics like promotion growth, turnover rates, and engagement scores.</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Developed Project SPARK (People Analytics) to collect, monitor, and analyze HR data for actionable insights</li>
+                    <li>Consolidated data across talent management touchpoints to empower managers and executives with informed, data-driven decisions</li>
+                    <li>Focused areas: Talent acquisition, employee performance, experience enhancement, churn analytics, and recruitment funnel optimization</li>
+                    <li>Enhanced hiring practices, automated reporting, improved visualization, and shared insights across departments</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

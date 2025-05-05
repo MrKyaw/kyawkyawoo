@@ -1,58 +1,185 @@
 
-<!-- it-products.html -->
+<!-- it-projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head section -->
+    <style>
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template:
+                "problem problem problem" auto
+                "tech image outcome" 1fr
+                "solution solution solution" auto
+                / 1fr min-content 1fr;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 200px;
+        }
+
+        .problem { 
+            grid-area: problem;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .tech-stack-section {
+            grid-area: tech;
+            align-self: start;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .image-container {
+            grid-area: image;
+            position: relative;
+            min-width: 150px;
+            width: 150px;
+            align-self: center;
+            justify-self: center;
+            transition: all 0.3s ease;
+        }
+
+        .dynamic-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .outcome-section {
+            grid-area: outcome;
+            align-self: start;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .solution-section {
+            grid-area: solution;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                grid-template:
+                    "problem" auto
+                    "tech" auto
+                    "image" auto
+                    "outcome" auto
+                    "solution" auto
+                    / 1fr;
+            }
+            
+            .image-container {
+                width: 100%;
+                height: 200px;
+                margin: 15px 0;
+            }
+        }
+    </style>
 </head>
-<body>
-    <nav><!-- Same navigation --></nav>
+<body>IT Projects(Under Construction Page)</h1>
+    <div class="project-container">
+        <p>Project 1: Live 2D Visual Inspector in 2011</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Industries needed a faster, more accurate way to inspect visual data in real-time, reducing reliance on manual quality checks</li>
+                </ul>
+            </div>
 
-    <h1>IT Products(Under Construction)</h1>
-    <!-- <ul>
-        <li>Network Monitoring Toolkit</li>
-        <li>Automated Deployment System</li>
-        <li>IT Service Management Platform</li>
-    </ul> -->
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Java and C# for system development</li>
+                    <li>Computer vision integration for real-time analysis</li>
+                </ul>
+            </div>
 
-    <div class="project">
-        <div class="project-title">Product 1 : Thin Client Enterprise Banking Web Application</div>
-        <img src="images/thin_client_signature_verifyer.jpg"  alt="Thin Client"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>A Thin Client Enterprise Banking Web Application streamlines banking services by providing a lightweight, browser-based interface for users, eliminating the need for heavy client installations. Built with technologies like HTML5, CSS3, JavaScript, and often backed by frameworks like Angular or React, it ensures efficient user interaction while relying on robust server-side infrastructure such as Java, Python, or .NET for processing transactions and managing data securely.</p>
-        <a href="#" class="view-project">Request More Product Info</a>
+            <div class="image-container">
+                <img src="images/2d_visual_inspector.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Achieved significant improvements in inspection accuracy and operational efficiency</li>
+                    <li>Enabled faster detection of quality issues, leading to better product reliability and process consistency</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Developed the Live 2D Visual Inspector that uses computer vision to automatically analyze and inspect live visual data</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 2: Fingerprint based Enterprise Voting Application and Iris System Integration in 2009</p>
+        <div class="project-card">
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Need for a secure, reliable, and efficient voting system to prevent identity fraud and errors</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>C# for application development</li>
+                    <li>MySQL for secure database management</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/finger_voter.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Delivered a secure, accurate, and efficient voting platform</li>
+                    <li>Increased trust and reliability in the voting process for enterprises</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Integrated fingerprint authentication with Iris System for double-layer biometric verification</li>
+                    <li>Designed a user-friendly voting application for organizational use</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
-    <!-- Repeat for other projects -->
-
-    <div class="project">
-        <div class="project-title">Product 2: TCP/IP Load Balancer using C++ Proactor Design Pattern and Boost Library</div>
-        <img src="images/tcp_ip_load_balancer.jpg"  alt="Load Balancer"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>A TCP/IP Load Balancer utilizing the Proactor Design Pattern in C++ efficiently handles asynchronous I/O operations, managing client requests across multiple servers for optimal performance. By leveraging the Boost Library, it simplifies asynchronous event-driven programming, enhancing scalability and reliability in high-traffic environments.</p>
-        <a href="#" class="view-project">Request More Product Info</a>
-    </div>
-
-    <div class="project">
-        <div class="project-title">Product 3: eFlow Web Service for Enterprise Banking Application</div>
-        <img src="images/eFlow_Webservice.jpg"  alt="eFlow"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>eFlow Web Service for Enterprise Banking enables seamless integration between Java and .NET applications, facilitating smooth messaging solutions via WCF. This framework allows for secure and efficient communication, ensuring reliable transactions and data exchange between diverse platforms in the banking ecosystem.</p>
-        <a href="#" class="view-project">Request More Product Info</a>
-    </div>
-
-    <div class="project">
-        <div class="project-title">Product 4: Hard Disk Drive Spindle Motor Drive and Characteristic Tester(AIO)</div>
-        <img src="images/aio_tester.jpg"  alt="AIO Tester"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>The Hard Disk Drive Spindle Motor Drive and Characteristic Tester utilizes Visual C++ and NAQDX for control and analysis, with TeeChart Pro for data visualization and algorithm development for performance testing. This combination ensures precise diagnostics and efficiency, essential for maintaining hard drive reliability.</p>
-        <a href="#" class="view-project">Request More Product Info</a>
-    </div>
-
-    <div class="project">
-        <div class="project-title">Product 5: Communication Functions for Remote Monitoring Unit</div>
-        <img src="images/communication_sms_gps.jpg"  alt="Remote Monitor"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>The Communication Functions for a Remote Monitoring Unit use C and C++ for programming, with Microchip and DSP embedded programming for efficient data handling. This setup enables real-time monitoring and control, crucial for effective remote management and system reliability.</p>
-        <a href="#" class="view-project">Request More Product Info</a>
-    </div>
-    
-
-    <!-- <iframe name="resumeFrame" id="resumeFrame" title="Resume"></iframe> -->
-    <footer></footer>
 </body>
 </html>
