@@ -3,33 +3,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head section -->
+    <style>
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template:
+                "problem problem problem" auto
+                "tech image outcome" 1fr
+                "solution solution solution" auto
+                / 1fr min-content 1fr;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 200px;
+        }
+
+        .problem { 
+            grid-area: problem;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .tech-stack-section {
+            grid-area: tech;
+            align-self: start;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .image-container {
+            grid-area: image;
+            position: relative;
+            min-width: 150px;
+            width: 150px;
+            align-self: center;
+            justify-self: center;
+            transition: all 0.3s ease;
+        }
+
+        .dynamic-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .outcome-section {
+            grid-area: outcome;
+            align-self: start;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .solution-section {
+            grid-area: solution;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                grid-template:
+                    "problem" auto
+                    "tech" auto
+                    "image" auto
+                    "outcome" auto
+                    "solution" auto
+                    / 1fr;
+            }
+            
+            .image-container {
+                width: 100%;
+                height: 200px;
+                margin: 15px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav><!-- Same navigation --></nav>
-
     <h1>IT Projects(Under Construction Page)</h1>
-    <!-- <ul>
-        <li>Enterprise Resource Planning System Implementation</li>
-        <li>Cloud Migration Project</li>
-        <li>Cybersecurity Infrastructure Overhaul</li>
-    </ul> -->
+    <div class="project-container">
+        <p>Project 1: Live 2D Visual Inspector in 2011</p>
+        <div class="project-card">
+            
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Industries needed a faster, more accurate way to inspect visual data in real-time, reducing reliance on manual quality checks</li>
+                </ul>
+            </div>
 
-    <div class="project">
-        <div class="project-title">Project 1: Live 2D Visual Inspector</div>
-        <img src="images/2d_visual_inspector.jpg"  alt="Visual Inspector"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>The Live 2D Visual Inspector utilizes Java and C# for development, integrating computer vision to analyze and inspect visual data in real-time. This setup enhances accuracy and efficiency in quality control and monitoring processes.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>Java and C# for system development</li>
+                    <li>Computer vision integration for real-time analysis</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/2d_visual_inspector.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <p>Efficiency Gains</p>
+                <ul>
+                    <li>Achieved significant improvements in inspection accuracy and operational efficiency</li>
+                    <li>Enabled faster detection of quality issues, leading to better product reliability and process consistency</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Developed the Live 2D Visual Inspector that uses computer vision to automatically analyze and inspect live visual data</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Project 2: Fingerprint based Enterprise Voting Application and Iris System Integration in 2009</p>
+        <div class="project-card">
+            
+            <div class="problem">
+                <div class="section-title">Problem Statements</div>
+                <ul>
+                    <li>Need for a secure, reliable, and efficient voting system to prevent identity fraud and errors</li>
+                </ul>
+            </div>
+
+            <div class="tech-stack-section">
+                <div class="section-title">Tech Stacks</div>
+                <ul>
+                    <li>C# for application development</li>
+                    <li>MySQL for secure database management</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img src="images/finger_voter.jpg" class="dynamic-image" alt="Solution Preview">
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
+            </div>
+
+            <div class="outcome-section">
+                <div class="section-title">Outcomes</div>
+                <ul>
+                    <li>Delivered a secure, accurate, and efficient voting platform</li>
+                    <li>Increased trust and reliability in the voting process for enterprises</li>
+                </ul>
+            </div>
+
+            <div class="solution-section">
+                <div class="section-title">Solution Approaches</div>
+                <ul>
+                    <li>Integrated fingerprint authentication with Iris System for double-layer biometric verification</li>
+                    <li>Designed a user-friendly voting application for organizational use</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="project">
-        <div class="project-title">Project 2: Fingerprint based Enterprise Voting Application and Iris System Integration</div>
-        <img src="images/finger_voter.jpg"  alt="Voter"  style="width: 150px; height: 120px; margin: 15px 0; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <p>The Fingerprint-based Enterprise Voting Application integrates with an Iris System to ensure secure and accurate voting, using C# for application development and MySQL for database management. This setup enhances security and reliability, making it ideal for organizations needing robust and efficient voting solutions.</p>
-        <a href="#" class="view-project">Request More Project Info</a>
-    </div>
-
-    <!-- <iframe name="resumeFrame" id="resumeFrame" title="Resume"></iframe> -->
-    <footer></footer>
 </body>
 </html>

@@ -104,19 +104,71 @@
             }
         }
     </style>
+
+    <style>
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        }
+    
+        .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 700px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 8px;
+        text-align: center;
+        }
+    
+        .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        /* cursor: pointer; */
+        }
+    
+        .close:hover,
+        .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+         /* Testimonial link styling */
+        .view-project {
+            color: #2980b9;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .view-project:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+
 </head>
 
 <body>
     <nav>
-        <!-- <a href="kyaw_profile.html" target="resumeFrame">Profile Summary</a>
-          -->
         <!-- <a href="kyaw_about.html" target="resumeFrame">About</a> -->
         <!-- <a href="#about">About</a> -->
         <a href="aiml-products.html">AIML Products</a>
         <a href="aiml-projects.html">AIML Projects</a>
         <a href="it-products.html">IT Products</a>
         <a href="it-projects.html">IT Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="Resume">Resume</a>
     </nav>
 
     <!-- Main content sections -->
@@ -136,7 +188,7 @@
                 alt="Kyaw Kyaw Oo Passport Photo" 
                 style="width: 120px; height: 150px; border-radius: 50%; margin-bottom: 15px;">
                 <h1>Kyaw Kyaw Oo(Under Construction Page)</h1>
-                <p>AI/ML & Data Science Developer</p>
+                <p>AI/ML & Data Science Developer and Instructor</p>
             </div>
 
             <div class="contact-bar">
@@ -164,10 +216,10 @@
                 <div class="skill-grid">
                     <div>
                         <h3>Degrees</h3>
-                        <p>MEng(Automation & Smart System - GPA : Expected 3.75 out of 4) - McMaster University, Canada<br>
-                           MSc(Signal Processing) - Nanyang Technological University, Singapore</p>
-                           BE(Electronics - GPA : 4.77 out of 5) - Yangon Technological University, Myanmar</p>
-                           Specialist Diploma(DevOps - GPA : 3.5 out of 4) - Republic Polytechnic, Singapore</p>
+                        <p>MEng(Automation & Smart System - GPA : Expected 3.75 out of 4) - McMaster University, Canada <a href="#" class="view-project" data-gif="testimonials/mcm_transcript.gif">Certificate</a><br>
+                           MSc(Signal Processing) - Nanyang Technological University, Singapore <a href="#" class="view-project" data-gif="">Certificate(Coming Soon)</a></p>
+                           BE(Electronics - GPA : 4.77 out of 5) - Yangon Technological University, Myanmar <a href="#" class="view-project" data-gif="">Certificate(Coming Soon)</a></p>
+                           Specialist Diploma(DevOps - GPA : 3.5 out of 4) - Republic Polytechnic, Singapore <a href="#" class="view-project" data-gif="testimonials/dip_devops_rp.gif">Certificate</a></p>
                     </div>
                     <div>
                         <h3>Certifications</h3>
@@ -331,7 +383,7 @@
                     <li>Passionate about leveraging AI/ML to create tools for smart, value-driven decisions</li>
                     <li>Enjoys sharing AI/ML expertise, from classic methods to cutting-edge systems across industries</li>
                     <li>Mentors AI/ML courses & projects, guiding students/industries from concept to production</li>           
-                    <p>Seeking new opportunities to contribute on innovative AI/ML projects pushing boundaries</p>
+                    <p><strong>Seeking new opportunities to contribute on innovative AI/ML projects pushing boundaries</strong></p>
 
                 <!-- <div class="experience-item">
                     <h3>Intelligent Mobility Assistant</h3>
@@ -349,18 +401,30 @@
                 <h2>Teaching</h2>
                     <p></p>Masters, FYP, Diploma Students and Adult Lerarners</p>
                     <ul>
-                        <li>Academic: Part Time lectures on AI, Data Science, Python and R at various well known Universites</li>
-                        <li>Corporate: Upskilled 200+ professionals in AIML and Data Science development and deployment strategies</li>
-                        <li>Community: Mentoring and Coaching AI Saturday and Datakind Events.</li>
+                        <li>Academic: Part Time lectures on AI, Data Science, Python and R at various well known Universites <a href="#" class="view-project" data-gif="testimonials/academic_mentor_tsm.gif">Testimonials</a></li>         
+                        <li>Corporate: Upskilled 200+ professionals in AIML and Data Science development and deployment strategies <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a></li>
+                        <li>Community: Mentoring and Coaching AI Saturday and Datakind Events <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a></li>
                     </ul>
                 
-                <h2>Published Papers(Uner Processing)</h2>
+                <h2>Papers(On Going, Under Processing and Published)</h2>
                 <div class="project">
                     <div class="project-title">Empowering Prediction of Secured Q&A by Leveraging T-RAG(On Going)</div>
-                    <p>Association for Computational Linguistics and Empirical Methods in Natural Language Processing(Ongoing)</p>
-                    <a href="#" class="view-project">Request for More Info</a>
+                    <p>Association for Computational Linguistics and Empirical Methods in Natural Language Processing(On Going)</p>
+                    <a href="#" class="view-project">View Paper(On Going)</a>
                 </div>
                 
+                <div class="project">
+                    <div class="project-title">Other AIML of BioMedical Papers(Under Processing)</div>
+                    <p>BioMedical, Image Processing and AIML Journals(Under Processing)</p>
+                    <a href="#" class="view-project">View Paper(Under Processing)</a>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Intelligent Movement-Controlled Brain-Computer Interface System Based on EEG Signal(Published)</div>
+                    <p>River Publishers(Published)</p>
+                    <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9788770047371-10/intelligent-movement-controlled-brain-computer-interface-system-based-eeg-signal-khin-eaindray-htun-may-thu-kyaw-htun-htun-kyaw-kyaw-oo-si-thu-aung-mehedi-hassan?context=ubx&refId=42cf465b-09fe-4ebf-817e-0b3954a945ea" class="view-project">View Paper(Published)</a>
+                </div>
+
                 <!-- <section id="contact">
                     <h2>Contact</h2>
                     <div class="contact-links">
@@ -376,10 +440,240 @@
 
             </div>
         </div>
+
+        <!-- <div id="gifModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <img id="modalGif" src="" alt="Work Sample GIF" style="width:100%">
+            </div>
+        </div>
+    
+        <script>
+            // Get modal elements
+            const modal = document.getElementById("gifModal");
+            const modalImg = document.getElementById("modalGif");
+            const span = document.querySelector(".close");
+          
+            // Add click handlers to all work sample links
+            document.querySelectorAll('.view-project').forEach(link => {
+              link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const gifUrl = this.dataset.gif; // Get GIF URL from data attribute
+                modal.style.display = "block";
+                modalImg.src = gifUrl;
+              });
+            });
+          
+            // Close modal handlers
+            span.onclick = () => modal.style.display = "none";
+            window.onclick = (event) => {
+              if (event.target === modal) modal.style.display = "none";
+            }
+        </script> -->
+
+        <!-- Testimonial Modal -->
+        <!-- <div id="imageModal" class="modal" aria-hidden="true" role="dialog">
+            <div class="modal-content" role="document">
+              <span class="close" aria-label="Close modal">&times;</span>
+              <img id="modalImage" src="" alt="" style="max-width: 100%; max-height: 80vh;">
+            </div>
+        </div> -->
+
+        <!-- <div id="testimonialModal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalTestimonial" src="" alt="Testimonial Image" style="max-width: 100%; max-height: 80vh;">
+            </div>
+        </div> -->
+
+        <div id="gifModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <img id="modalGif" src="" alt="Work Sample GIF" style="width:100%">
+            </div>
+        </div>
+
+        <!-- <script>
+            // Testimonial Modal Functionality
+            const testimonialModal = document.getElementById("testimonialModal");
+            const modalTestimonial = document.getElementById("modalTestimonial");
+            const closeBtn = document.querySelector("#testimonialModal .close");
+            
+            // Handle testimonial clicks
+            document.querySelectorAll('.view-project[data-gif]').forEach(link => {
+              link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const testimonialImg = this.getAttribute('data-gif');
+                if (testimonialImg) {
+                  modalTestimonial.src = testimonialImg;
+                  testimonialModal.style.display = "block";
+                }
+              });
+            });
+            
+            // Close modal
+            closeBtn.onclick = function() {
+              testimonialModal.style.display = "none";
+            }
+            
+            // Close when clicking outside
+            window.onclick = function(event) {
+              if (event.target == testimonialModal) {
+                testimonialModal.style.display = "none";
+              }
+            }
+        </script> -->
+
+
+        <!-- <script>
+            document.querySelectorAll('.view-project').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const gif = this.getAttribute('data-gif');
+                const href = this.getAttribute('href');
+                if (gif && gif.trim() !== "") {
+                e.preventDefault();
+                // Show modal with GIF
+                document.getElementById('gif-modal-img').src = gif;
+                document.getElementById('gif-modal').style.display = 'flex';
+                } else if (href === "#" || !href || href.trim() === "") {
+                e.preventDefault();
+                // Optionally show a message: "Coming Soon"
+                alert("Coming Soon!");
+                }
+                // else: let the browser follow the link as normal
+            });
+            });
+        </script> -->
+
+        <script>
+            // Get modal elements
+            const modal = document.getElementById("gifModal");
+            const modalImg = document.getElementById("modalGif");
+            const span = document.querySelector(".close");
+            const modalContent = document.querySelector(".modal-content");
+        
+            // Function to center modal
+            function centerModal() {
+                const modalWidth = modalContent.offsetWidth;
+                const modalHeight = modalContent.offsetHeight;
+                
+                modalContent.style.left = `${(window.innerWidth - modalWidth) / 2}px`;
+                modalContent.style.top = `${(window.innerHeight - modalHeight) / 2}px`;
+            }
+        
+            // Function to calculate and set optimal size
+            async function setOptimalSize(imgSrc) {
+                return new Promise((resolve) => {
+                    const tempImg = new Image();
+                    tempImg.src = imgSrc;
+                    
+                    tempImg.onload = function() {
+                        const screenWidth = window.innerWidth;
+                        const screenHeight = window.innerHeight;
+                        const imgRatio = this.naturalWidth / this.naturalHeight;
+                        
+                        // Calculate maximum dimensions (50% of screen)
+                        const maxWidth = screenWidth * 0.5;
+                        const maxHeight = screenHeight * 0.5;
+                        
+                        // Calculate dimensions that maintain aspect ratio
+                        let width = this.naturalWidth;
+                        let height = this.naturalHeight;
+                        
+                        if (width > maxWidth || height > maxHeight) {
+                            const widthRatio = maxWidth / width;
+                            const heightRatio = maxHeight / height;
+                            const ratio = Math.min(widthRatio, heightRatio);
+                            
+                            width = width * ratio;
+                            height = height * ratio;
+                        }
+                        
+                        // Apply dimensions
+                        modalContent.style.width = `${width}px`;
+                        modalContent.style.height = `${height}px`;
+                        modalContent.style.maxWidth = 'none'; // Remove max-width constraint
+                        
+                        // Center the modal
+                        centerModal();
+                        
+                        resolve();
+                    };
+                    
+                    tempImg.onerror = function() {
+                        // Fallback to half screen dimensions
+                        modalContent.style.width = `${window.innerWidth * 0.5}px`;
+                        modalContent.style.height = `${window.innerHeight * 0.5}px`;
+                        centerModal();
+                        resolve();
+                    };
+                });
+            }
+        
+            // Add click handlers to all work sample links
+            document.querySelectorAll('.view-project').forEach(link => {
+                link.addEventListener('click', async function(e) {
+                    if (this.dataset.gif) {
+                        e.preventDefault();
+                        const gifUrl = this.dataset.gif;
+                        
+                        // Show modal immediately
+                        modal.style.display = "block";
+                        
+                        // Set temporary loading state
+                        modalImg.src = "";
+                        modalImg.alt = "Loading...";
+                        
+                        // Set optimal size and center
+                        await setOptimalSize(gifUrl);
+                        
+                        // Load the actual image
+                        modalImg.src = gifUrl;
+                        modalImg.alt = "Work Sample GIF";
+                    }
+                });
+            });
+        
+            // Close modal handlers
+            span.onclick = () => modal.style.display = "none";
+            window.onclick = (event) => {
+                if (event.target === modal) modal.style.display = "none";
+            }
+        
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (modal.style.display === "block" && modalImg.src) {
+                    centerModal();
+                }
+            });
+        
+            // Adjust modal content positioning in CSS
+            const style = document.createElement('style');
+            style.textContent = `
+                .modal-content {
+                    position: fixed;
+                    margin: 0;
+                    padding: 20px;
+                    transform: none;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #fefefe;
+                    border-radius: 8px;
+                    text-align: center;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                }
+                
+                .modal-content img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                }
+            `;
+            document.head.appendChild(style);
+        </script>
     </body>
-
-    <!-- <iframe name="resumeFrame" id="resumeFrame" title="Resume"></iframe> -->
-
-    <footer><!-- Footer content --></footer>
-</body>
 </html>

@@ -100,6 +100,45 @@
             }
         }
     </style>
+
+    <style>
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        }
+    
+        .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 700px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 8px;
+        }
+    
+        .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+    
+        .close:hover,
+        .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1>AIML Projects(Under Construction Page)</h1>
@@ -126,7 +165,8 @@
 
             <div class="image-container">
                 <img src="images/apama.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href="https://github.com/MrKyaw/Agentic-Project-Agnostic-Management-Advisor" class="view-project">Work Sample Only</a>
+                <a href="https://github.com/MrKyaw/Agentic-Project-Agnostic-Management-Advisor" class="view-project">Code Flow Sample Only</a>
+                <a href="#" class="view-project" data-gif="testimonials/apama_tsm.gif">Testimonials</a>
             </div>
 
             <div class="outcome-section">
@@ -182,7 +222,8 @@
 
             <div class="image-container">
                 <img src="images/mgiia.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href="https://github.com/MrKyaw/Mobility-Guided-Intelligent-Information-Assistant" class="view-project">Work Sample Only</a>
+                <a href="https://github.com/MrKyaw/Mobility-Guided-Intelligent-Information-Assistant" class="view-project">Code Flow Sample Only</a>
+                <a href="#" class="view-project" data-gif="testimonials/mgiia_tsm.gif">Testimonials</a>
             </div>
 
             <div class="outcome-section">
@@ -224,7 +265,8 @@
 
             <div class="image-container">
                 <img src="images/tte_cancer.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
             </div>
 
             <div class="outcome-section">
@@ -265,7 +307,8 @@
 
             <div class="image-container">
                 <img src="images/aidrms.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
             </div>
 
             <div class="outcome-section">
@@ -310,7 +353,8 @@
 
             <div class="image-container">
                 <img src="images/orion_cata.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
             </div>
 
             <div class="outcome-section">
@@ -354,7 +398,8 @@
 
             <div class="image-container">
                 <img src="images/ebfhr.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
             </div>
 
             <div class="outcome-section">
@@ -399,7 +444,8 @@
 
             <div class="image-container">
                 <img src="images/vms.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
             </div>
 
             <div class="outcome-section">
@@ -445,7 +491,8 @@
 
             <div class="image-container">
                 <img src="images/fdb.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
             </div>
 
             <div class="outcome-section">
@@ -490,7 +537,8 @@
 
             <div class="image-container">
                 <img src="images/spark.jpg" class="dynamic-image" alt="Solution Preview">
-                <a href=" " class="view-project">Work Sample Only(Loading Soon)</a>
+                <a href=" " class="view-project">Code Flow Sample Only(Loading Soon)</a>
+                <a href="#" class="view-project" data-gif="">Testimonials(Coming Soon)</a>
             </div>
 
             <div class="outcome-section">
@@ -513,7 +561,145 @@
                 </ul>
             </div>
         </div>
-
     </div>
-</body>
+
+    <div id="gifModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img id="modalGif" src="" alt="Work Sample GIF" style="width:100%">
+        </div>
+    </div>
+
+    <script>
+        // Get modal elements
+        const modal = document.getElementById("gifModal");
+        const modalImg = document.getElementById("modalGif");
+        const span = document.querySelector(".close");
+        const modalContent = document.querySelector(".modal-content");
+    
+        // Function to center modal
+        function centerModal() {
+            const modalWidth = modalContent.offsetWidth;
+            const modalHeight = modalContent.offsetHeight;
+            
+            modalContent.style.left = `${(window.innerWidth - modalWidth) / 2}px`;
+            modalContent.style.top = `${(window.innerHeight - modalHeight) / 2}px`;
+        }
+    
+        // Function to calculate and set optimal size
+        async function setOptimalSize(imgSrc) {
+            return new Promise((resolve) => {
+                const tempImg = new Image();
+                tempImg.src = imgSrc;
+                
+                tempImg.onload = function() {
+                    const screenWidth = window.innerWidth;
+                    const screenHeight = window.innerHeight;
+                    const imgRatio = this.naturalWidth / this.naturalHeight;
+                    
+                    // Calculate maximum dimensions (50% of screen)
+                    const maxWidth = screenWidth * 0.5;
+                    const maxHeight = screenHeight * 0.5;
+                    
+                    // Calculate dimensions that maintain aspect ratio
+                    let width = this.naturalWidth;
+                    let height = this.naturalHeight;
+                    
+                    if (width > maxWidth || height > maxHeight) {
+                        const widthRatio = maxWidth / width;
+                        const heightRatio = maxHeight / height;
+                        const ratio = Math.min(widthRatio, heightRatio);
+                        
+                        width = width * ratio;
+                        height = height * ratio;
+                    }
+                    
+                    // Apply dimensions
+                    modalContent.style.width = `${width}px`;
+                    modalContent.style.height = `${height}px`;
+                    modalContent.style.maxWidth = 'none'; // Remove max-width constraint
+                    
+                    // Center the modal
+                    centerModal();
+                    
+                    resolve();
+                };
+                
+                tempImg.onerror = function() {
+                    // Fallback to half screen dimensions
+                    modalContent.style.width = `${window.innerWidth * 0.5}px`;
+                    modalContent.style.height = `${window.innerHeight * 0.5}px`;
+                    centerModal();
+                    resolve();
+                };
+            });
+        }
+    
+        // Add click handlers to all work sample links
+        document.querySelectorAll('.view-project').forEach(link => {
+            link.addEventListener('click', async function(e) {
+                if (this.dataset.gif) {
+                    e.preventDefault();
+                    const gifUrl = this.dataset.gif;
+                    
+                    // Show modal immediately
+                    modal.style.display = "block";
+                    
+                    // Set temporary loading state
+                    modalImg.src = "";
+                    modalImg.alt = "Loading...";
+                    
+                    // Set optimal size and center
+                    await setOptimalSize(gifUrl);
+                    
+                    // Load the actual image
+                    modalImg.src = gifUrl;
+                    modalImg.alt = "Work Sample GIF";
+                }
+            });
+        });
+    
+        // Close modal handlers
+        span.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => {
+            if (event.target === modal) modal.style.display = "none";
+        }
+    
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (modal.style.display === "block" && modalImg.src) {
+                centerModal();
+            }
+        });
+    
+        // Adjust modal content positioning in CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .modal-content {
+                position: fixed;
+                margin: 0;
+                padding: 20px;
+                transform: none;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #fefefe;
+                border-radius: 8px;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+            
+            .modal-content img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+  </body>
 </html>
